@@ -1,0 +1,310 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: #eef5fc;
+  color: #172b4d;
+}
+
+/* Main sections */
+
+.page {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 35px 25px 50px;
+}
+
+/* Hide inactive pages */
+
+.hidden {
+  display: none !important;
+}
+
+/* Main title */
+
+h1 {
+  text-align: center;
+  color: #123b6d;
+  font-size: 36px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+h2 {
+  color: #164f86;
+  font-size: 21px;
+  line-height: 1.4;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Intro text */
+
+h1 + p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Categories */
+
+.category {
+  background: white;
+  border: 1px solid #c9d9ea;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 16px 0;
+  box-shadow: 0 3px 10px rgba(20, 60, 100, 0.08);
+}
+
+.category h2 {
+  margin-top: 0;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+/* Buttons */
+
+button {
+  font-family: Georgia, "Times New Roman", serif;
+  border: none;
+  border-radius: 8px;
+  padding: 13px 18px;
+  background: #185a96;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #123f6b;
+}
+
+/* Source buttons */
+
+.sources {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.sources button {
+  text-align: left;
+  background: #185a96;
+}
+
+.sources button:hover {
+  background: #123f6b;
+}
+
+/* Back button */
+
+.back {
+  background: #dceaf7;
+  color: #174d7c;
+  margin-bottom: 25px;
+}
+
+.back:hover {
+  background: #c8ddef;
+}
+
+/* Lists */
+
+ul {
+  line-height: 1.8;
+}
+
+li {
+  margin-bottom: 7px;
+}
+
+/* Mobile / iPad */
+
+@media (max-width: 700px) {
+
+  .page {
+    padding: 25px 18px 40px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 15px;
+  }
+}
+.category button {
+  display: block;
+  margin: 0 auto;
+}
+/* ==============================
+   EXTRA HOMEPAGE DESIGN
+   ============================== */
+
+/* Soft blue background with depth */
+body {
+  background:
+    radial-gradient(circle at top left, #dbeafe 0, transparent 35%),
+    radial-gradient(circle at bottom right, #d9e9f8 0, transparent 35%),
+    #eef5fc;
+}
+
+/* Main title */
+h1 {
+  color: #103f70;
+  letter-spacing: 0.5px;
+}
+
+/* Subtitle / intro */
+h1 + p,
+.intro {
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Category cards */
+.category {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Decorative blue line */
+.category::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  background: #185a96;
+}
+
+/* Slight movement when touching a category */
+.category:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(20, 60, 100, 0.13);
+}
+
+/* Explore buttons */
+.category button {
+  display: block;
+  margin: 0 auto;
+  min-width: 130px;
+}
+
+/* Entrance animation */
+.category {
+  animation: fadeUp 0.7s ease both;
+}
+
+.category:nth-of-type(1) {
+  animation-delay: 0.1s;
+}
+
+.category:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+
+.category:nth-of-type(3) {
+  animation-delay: 0.3s;
+}
+
+.category:nth-of-type(4) {
+  animation-delay: 0.4s;
+}
+
+.category:nth-of-type(5) {
+  animation-delay: 0.5s;
+}
+
+.category:nth-of-type(6) {
+  animation-delay: 0.6s;
+}
+
+.category:nth-of-type(7) {
+  animation-delay: 0.7s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ==============================
+   PAGE ENTRANCE ANIMATION
+   ============================== */
+
+.page:not(.hidden) {
+  animation: pageEnter 0.45s ease-out;
+}
+
+.page:not(.hidden) h1 {
+  animation: titleEnter 0.55s ease-out;
+}
+
+.page:not(.hidden) .intro {
+  animation: contentEnter 0.65s ease-out;
+}
+
+.page:not(.hidden) .sources {
+  animation: contentEnter 0.75s ease-out;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes titleEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes contentEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
